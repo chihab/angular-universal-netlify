@@ -1,0 +1,35 @@
+<div class="h-full flex flex-col">
+  <ng-container *ngIf="list$ | async as list">
+    <div class="relative bg-white overflow-hidden">
+      <main class="mx-auto max-w-7xl pb-8 pt-6 px-4 sm:px-6 lg:px-8">
+        <div class="divide-y">
+          <div class="py-5" *ngFor="let item of list">
+            <div class="flex flex-col lg:flex-row" *ngIf="item !== null">
+              <div class="max-w-md">
+                <a [routerLink]="['/item', item.id]">
+                  <img
+                    class="object-contain hover:shadow-2xl hover:opacity-80"
+                    src="{{ item.thumbnailUrl }}"
+                  />
+                </a>
+              </div>
+              <div class="lg:pl-5">
+                <a [routerLink]="['/item', item.id]">
+                  <h3
+                    class="text-lg mt-4 lg:mt-0 font-medium leading-normal text-gray-700 hover:text-red-600"
+                  >
+                    {{ item.title }}
+                  </h3>
+                </a>
+                <p
+                  class="text-lg font-light leading-relaxed my-4 max-h-64 overflow-hidden overflow-ellipsis"
+                  [innerText]="item.description"
+                ></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </ng-container>
+</div>

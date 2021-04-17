@@ -1,0 +1,7 @@
+[dev]
+command = "npm run prerender"
+framework = "#custom"
+functionsPort = 8889
+port = 4200
+publish = "dist/ngx-darija/browser"
+targetPort = 8888
