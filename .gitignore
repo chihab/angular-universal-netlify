@@ -46,7 +46,7 @@ testem.log
 Thumbs.db
 
 # Local Netlify folder
-.netlify
+.netlify/functions
 
 # Generated files for dynamic route pre rendering
 routes.txt
